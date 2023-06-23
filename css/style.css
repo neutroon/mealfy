@@ -148,6 +148,7 @@ nav .container .nav2-links {
 }
 
 nav .container .nav2-links label i{
+  display: none;
 position: fixed;
 top: 1.4rem;
 right: 5rem;

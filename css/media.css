@@ -6,7 +6,7 @@
   nav .container .nav-links {
     display: none;
   }
-  nav .container .menu-btn {
+  nav .container .nav2-links label i{
     display: block;
   }
   /* nav end*/
