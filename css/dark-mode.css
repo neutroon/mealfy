@@ -1,0 +1,125 @@
+nav input[type="checkbox"] {
+  display: none;
+}
+nav .container .mode-btn input[type="checkbox"]:checked + label .fa-moon {
+  display: none;
+}
+nav
+  .container
+  .mode-btn
+  input[type="checkbox"]:not(input[type="checkbox"]:checked)
+  + label
+  .fa-sun {
+  display: none;
+}
+
+/* target sections -----------------------------*/
+body:has(#home:target) .nav-links a[href="#home"] {
+  color: black;
+}
+body:has(#home:target) .nav-links a[href="#home"]::after {
+  width: 100%;
+}
+body:has(#chefs:target) .nav-links a[href="#chefs"] {
+  color: black;
+}
+body:has(#chefs:target) .nav-links a[href="#chefs"]::after {
+  width: 100%;
+}
+body:has(#gallery:target) .nav-links a[href="#gallery"] {
+  color: black;
+}
+body:has(#gallery:target) .nav-links a[href="#gallery"]::after {
+  width: 100%;
+}
+body:has(#contact:target) .nav-links a[href="#contact"] {
+  color: black;
+}
+body:has(#contact:target) .nav-links a[href="#contact"]::after {
+  width: 100%;
+}
+
+/* change font colors -----------------------------*/
+/* nav */
+:root:has(#switch-mode:checked) nav,
+:root:has(#switch-mode:checked) nav ul li a:hover,
+:root:has(#switch-mode:checked):has(#home:target)
+  .nav-links
+  a[href="#home"],
+:root:has(#switch-mode:checked):has(#chefs:target)
+  .nav-links
+  a[href="#chefs"],
+:root:has(#switch-mode:checked):has(#gallery:target)
+  .nav-links
+  a[href="#gallery"],
+:root:has(#switch-mode:checked):has(#contact:target)
+  .nav-links
+  a[href="#contact"],
+  /* home */
+  :root:has(#switch-mode:checked)
+  header
+  .container
+  .content
+  .BtnGroub
+  .videoBtn
+  .secondBtn,
+:root:has(#switch-mode:checked) header .container .content h2,
+:root:has(#switch-mode:checked) header .container .content p,
+:root:has(#switch-mode:checked) header .container .content .BtnGroub .videoBtn .secondBtn::after,
+/* contact */
+:root:has(#switch-mode:checked)
+  #contact
+  .container
+  .details
+  > div
+  .content
+  p,
+  /* chefs */
+:root:has(#switch-mode:checked)
+  #chefs
+  .container
+  .cards
+  .card
+  .content
+  h3,
+  /* container */
+:root:has(#switch-mode:checked) .container .main-title p {
+  color: white;
+}
+
+
+
+
+
+/* change background colors -----------------------------*/
+
+/* contac */
+:root:has(#switch-mode:checked) #contact .container .details > div,
+:root:has(#switch-mode:checked) #contact .container form,
+/* home */
+:root:has(#switch-mode:checked)
+  header
+  .container
+  .content
+  .BtnGroub
+  .videoBtn
+  .secondBtn,
+:root:has(#switch-mode:checked) header .container .content .BtnGroub .firstBtn,
+/* nav */
+:root:has(#switch-mode:checked) nav {
+  background-color: black;
+}
+
+:root:has(#switch-mode:checked) {
+  --primaryColor: #c17e1f;
+}
+
+
+:root:has(#switch-mode:checked) #home,
+:root:has(#switch-mode:checked) #gallery {
+  background-color: #252525;
+}
+:root:has(#switch-mode:checked) #chefs,
+:root:has(#switch-mode:checked) #contact {
+  background-color: #202020;
+}

@@ -7,6 +7,8 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/dark-mode.css">
+    <link rel="stylesheet" href="./css/media.css">
     <title>Mealify</title>
   </head>
   <body>
@@ -22,7 +24,20 @@
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-          <i class="fa-solid fa-moon"></i>
+        <div class="mode-btn">
+          <input id="switch-mode" type="checkbox">
+          <label for="switch-mode">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+          </label>
+        </div>
+
+        <div class="menu-btn">
+          <input type="checkbox" id="btn">
+          <label for="btn"><i class="fa-solid fa-bars"></i></label>
+          
+        </div>
+          
       </div>
     </nav>
     
@@ -228,7 +243,7 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
         <div class="details">
-          <div class="address">
+          <div>
             <div class="icon">
               <i class="fa-regular fa-map"></i>
             </div>
@@ -238,7 +253,7 @@
             </div>
           </div>
 
-          <div class="email">
+          <div>
             <div class="icon">
               <i class="fa-regular fa-envelope"></i>
             </div>
@@ -248,7 +263,7 @@
             </div>
           </div>
 
-          <div class="call-us">
+          <div>
             <div class="icon">
               <i class="fa-solid fa-phone"></i>
             </div>
@@ -257,7 +272,7 @@
               <p>+1 5589 55488 55</p>
             </div>
           </div>
-          <div class="opening-hours">
+          <div>
             <div class="icon">
               <i class="fa-regular fa-map"></i>
             </div>

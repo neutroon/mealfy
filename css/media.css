@@ -1,0 +1,101 @@
+/* 1200px, 993px, 769px */
+
+/* 1200px */
+@media screen and (max-width: 1200px) {
+  /* nav */
+  nav .container .nav-links {
+    display: none;
+  }
+  nav .container .menu-btn {
+    display: block;
+  }
+  /* nav end*/
+
+  /* footer */
+  footer .container .content:nth-child(1) {
+    flex-basis: calc(50% - (var(--gap)));
+    order: 1;
+  }
+  footer .container .content:nth-child(2) {
+    flex-basis: calc(100% - (var(--gap)));
+    order: 3;
+  }
+  footer .container .content:nth-child(3) {
+    flex-basis: calc(50% - (var(--gap)));
+    order: 2;
+  }
+  /* footer end */
+}
+
+/* 993px */
+@media screen and (max-width: 993px) {
+  /* header */
+  header .container {
+    flex-direction: column;
+  }
+  header {
+    height: auto;
+  }
+  header .container .img,
+  header .container .content {
+    width: 75%;
+  }
+  header .container .content .BtnGroub {
+    justify-content: center;
+  }
+  /* header end */
+
+  /* chefs section */
+  #chefs .container .cards .card {
+    width: calc(50% - var(--gap));
+  }
+  /* chefs section end */
+
+  /* gallery */
+  #gallery .meals .column {
+    width: calc(50% - var(--gap));
+  }
+  /* gallery end */
+
+  /* contact */
+  #contact .container form > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* contact end */
+}
+
+/* 769px */
+@media screen and (max-width: 769px) {
+  /* header */
+  header .container .img,
+  header .container .content {
+    width: 90%;
+  }
+  header .container .content .BtnGroub {
+    justify-content: start;
+  }
+  /* header end */
+
+  /* chefs section */
+  #chefs .container .cards .card {
+    width: 100%;
+  }
+  /* chefs section end */
+
+  /* gallery */
+  #gallery .meals .column {
+    width: calc(100% - var(--gap));
+  }
+  /* gallery end */
+
+  /* contact */
+  #contact .container .details {
+    flex-direction: column;
+  }
+  #contact .container .details > div {
+    width: 100%;
+    /* contact end */
+  }
+}

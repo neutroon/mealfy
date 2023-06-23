@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -12,6 +12,7 @@ body{
   --mainHoverColor: #e61414;
   --lightGrayColor: #eeeeee;
   --gap: 1.25rem;
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   background-color: #37373f;
@@ -71,58 +72,69 @@ header,
 footer {
   padding: 3.125rem 0;
 }
+i {
+  cursor: pointer;
+}
 /* global selectors end */
 
 /* navbar start */
-nav{
+nav {
   background-color: white;
   box-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.3);
   position: fixed;
   z-index: 999;
   width: 100%;
   padding: 1rem 0;
-
 }
-nav .container{
+nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav .container .logo h2::after{
+nav .container .logo h2::after {
   content: ".";
   color: var(--primaryColor);
   font-size: 2rem;
 }
-nav .container ul{
+nav .container ul {
   display: flex;
   gap: var(--gap);
   list-style: none;
   font-size: 1rem;
   font-weight: 600;
 }
-nav .container ul li{
+nav .container ul li {
   position: relative;
 }
-nav .container ul li::after{
+nav .container ul li a::after {
   content: "";
   position: absolute;
   left: 0;
   top: 100%;
-  height: .13rem;
+  height: 0.13rem;
   width: 0%;
   background-color: var(--primaryColor);
-  transition: ease-in-out 0.3s all;
-
+  transition: ease-in-out 0.3s width;
 }
-nav .container ul li:hover::after{
+nav .container ul li:hover a::after {
   width: 100%;
 }
-nav .container ul li a{
+nav .container ul li a {
   text-decoration: none;
   color: gray;
+  transition: ease-in-out 0.3s color;
 }
-nav i{
+nav .container ul li a:hover {
+  color: black;
+}
+nav .container label .fa-sun {
+  color: orange;
+}
+nav i {
   font-size: 1.5rem;
+}
+nav .container .menu-btn {
+  display: none;
 }
 /* navbar end */
 
@@ -164,6 +176,7 @@ header .container .content .BtnGroub {
   display: flex;
   gap: var(--gap);
   align-items: center;
+  /* justify-content: center; */
 }
 header .container .content .BtnGroub .videoBtn .secondBtn,
 header .container .content .videoBtn,
@@ -233,10 +246,12 @@ header .container .content .BtnGroub .videoBtn .secondBtn::after {
 #chefs .container .cards {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   text-align: center;
   gap: var(--gap);
 }
 #chefs .container .cards .card {
+  width: calc(33.333% - var(--gap));
   border-radius: 1rem;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.235);
   transition: linear 0.2s transform;
@@ -302,10 +317,14 @@ header .container .content .BtnGroub .videoBtn .secondBtn::after {
 }
 #gallery .meals {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--gap);
 }
 #gallery .meals .column {
+  width: calc(33.333% - var(--gap));
+
   display: flex;
+  
   flex-direction: column;
   gap: var(--gap);
 }
@@ -353,7 +372,6 @@ header .container .content .BtnGroub .videoBtn .secondBtn::after {
   width: 100%;
 }
 #contact .container .details {
-  /* width: 100%; */
   display: flex;
   justify-content: center;
   gap: var(--gap);
@@ -377,44 +395,46 @@ header .container .content .BtnGroub .videoBtn .secondBtn::after {
 #contact .container .details > div .content {
   padding: 1rem;
 }
-#contact .container .details > div .content h3{
-  color: #7D7D7D;
+#contact .container .details > div .content h3 {
+  color: #7d7d7d;
   margin-bottom: 0.3125rem;
   font-size: 1.25rem;
   font-family: sans-serif;
 }
-#contact .container .details > div .content p{
+#contact .container .details > div .content p {
   color: #212529;
 }
-#contact .container form{
+#contact .container form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--gap);
   padding: 1rem;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-#contact .container form input, #contact .container form textarea{
-width: 100%;
-padding: 1rem;
-border: 2px solid #dddcdc;
-font-family: inherit;
+#contact .container form input,
+#contact .container form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #dddcdc;
+  font-family: inherit;
 }
-#contact .container form input:focus, #contact .container form textarea:focus{
+#contact .container form input:focus,
+#contact .container form textarea:focus {
   outline: none;
   border-color: var(--primaryColor);
 }
-#contact .container form > div{
+#contact .container form > div {
   display: flex;
   width: 100%;
   gap: var(--gap);
 }
 
-#contact .container form textarea{
+#contact .container form textarea {
   resize: vertical;
 }
-#contact .container form button{
+#contact .container form button {
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 2rem;
@@ -422,118 +442,118 @@ font-family: inherit;
   color: white;
   transition: ease-in-out 0.3s background-color;
 }
-#contact .container form button:hover{
+#contact .container form button:hover {
   background-color: var(--mainHoverColor);
 }
 
 /* contact section end */
 
 /* footer start */
-footer{
+footer {
   background-color: rgb(0, 0, 0);
   color: white;
 }
-footer .container{
+footer .container {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--gap);
   justify-content: space-between;
 }
-footer .container .content{
+footer .container .content {
   display: flex;
   flex-direction: column;
 }
-footer .container .content:nth-child(1){
-  flex-basis: 25%;
+footer .container .content:nth-child(1) {
+  flex-basis: calc(25% - (var(--gap)));
 }
-footer .container .content:nth-child(2){
-  flex-basis: 50%;
+footer .container .content:nth-child(2) {
+  flex-basis: calc(50% - (var(--gap)));
 }
-footer .container .content:nth-child(3){
-  flex-basis: 25%;
+footer .container .content:nth-child(3) {
+  flex-basis: calc(25% - (var(--gap)));
 }
-footer .container .content .logo figure{
+footer .container .content .logo figure {
   display: flex;
   align-items: center;
-  gap: .7rem;
+  gap: 0.7rem;
   width: 3rem;
 }
-footer .container .content .logo figure img{
+footer .container .content .logo figure img {
   width: 100%;
 }
-footer .container .content .logo figure figcaption{
+footer .container .content .logo figure figcaption {
   font-size: 1.875rem;
   font-weight: 700;
 }
-footer .container .content .logo figure figcaption::after{
+footer .container .content .logo figure figcaption::after {
   content: ".";
   color: var(--primaryColor);
   font-size: 2rem;
 }
 footer .container .content p {
-  margin: .625rem 0;
+  margin: 0.625rem 0;
 }
-footer .container .content .social{
+footer .container .content .social {
   text-align: center;
 }
-footer .container .content .social hr{
+footer .container .content .social hr {
   margin: 1rem 0;
   background-color: #595959;
-  height: .13rem;
+  height: 0.13rem;
   border: none;
 }
-footer .container .content .social i{
+footer .container .content .social i {
   font-size: 1.5rem;
   padding: 0.5rem;
   transition: ease-in-out 0.3s color;
 }
-footer .container .content form{
+footer .container .content form {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
   margin-bottom: 1rem;
 }
-footer .container .content form button, footer .container .content form input[type="email"]{
+footer .container .content form button,
+footer .container .content form input[type="email"] {
   padding: 0.625rem;
 }
-
-footer .container .content form input[type="email"]{
+footer .container .content form input[type="email"] {
   padding: 0.625rem;
   flex-grow: 1;
   outline: none;
 }
-footer .container .content form button{
+footer .container .content form button {
   font-size: 1rem;
   background-color: var(--primaryColor);
   color: white;
   border: none;
 }
-footer .container .content form button i{
-  margin-right: .3rem;
+footer .container .content form button i {
+  margin-right: 0.3rem;
 }
-footer .container .content .links ul{
-  margin-top: .625rem;
+footer .container .content .links ul {
+  margin-top: 0.625rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
 }
-footer .container .content .links ul li{
-  margin-bottom: .625rem;
+footer .container .content .links ul li {
+  margin-bottom: 0.625rem;
   width: 50%;
-  padding: .3rem;
-  transition: ease-in-out 0.3s background-color,  ease-in-out 0.3s transform;
+  padding: 0.3rem;
+  transition: ease-in-out 0.3s background-color, ease-in-out 0.3s transform;
 }
-footer .container .content .links ul li:hover{
+footer .container .content .links ul li:hover {
   background-color: #222;
-  transform: translateX(.3rem);
+  transform: translateX(0.3rem);
 }
-footer .container .content a{
+footer .container .content a {
   color: white;
   text-decoration: none;
-  padding: .625rem;
+  padding: 0.625rem;
 }
-footer .container .content a i{
-  margin-right: .3rem;
+footer .container .content a i {
+  margin-right: 0.3rem;
   font-size: 1.37rem;
   color: var(--primaryColor);
 }
-
 /* footer end */
