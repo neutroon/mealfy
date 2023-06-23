@@ -133,9 +133,30 @@ nav .container label .fa-sun {
 nav i {
   font-size: 1.5rem;
 }
-nav .container .menu-btn {
-  display: none;
+/* mobile menu */
+nav .container .nav2-links {
+  background-color: white;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0rem;
+  bottom: 0;
+  width: 15rem;
+  transition: ease-in-out 0.3s right;
 }
+
+nav .container .nav2-links label i{
+position: fixed;
+top: 1.4rem;
+right: 5rem;
+}
+
+:root:has(#close-menu:checked) nav .container .nav2-links {
+  right: -15rem;
+}
+
 /* navbar end */
 
 /* home section start */
@@ -324,7 +345,7 @@ header .container .content .BtnGroub .videoBtn .secondBtn::after {
   width: calc(33.333% - var(--gap));
 
   display: flex;
-  
+
   flex-direction: column;
   gap: var(--gap);
 }
